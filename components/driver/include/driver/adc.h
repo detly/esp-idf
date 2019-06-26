@@ -265,6 +265,12 @@ esp_err_t adc_set_data_inv(adc_unit_t adc_unit, bool inv_en);
  */
 esp_err_t adc_set_clk_div(uint8_t clk_div);
 
+/* Exposed manually to work around
+ * https://github.com/espressif/esp-idf/issues/2980
+ */
+esp_err_t adc_set_i2s_data_len(adc_unit_t adc_unit, int patt_len);
+esp_err_t adc_set_i2s_data_pattern(adc_unit_t adc_unit, int seq_num, adc_channel_t channel, adc_bits_width_t bits, adc_atten_t atten);
+
 /**
  * @brief Set I2S data source
  * @param src I2S DMA data source, I2S DMA can get data from digital signals or from ADC.

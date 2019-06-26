@@ -1342,7 +1342,7 @@ static int adc_convert( adc_unit_t unit, int channel)
 /*-------------------------------------------------------------------------------------
  *                      ADC I2S
  *------------------------------------------------------------------------------------*/
-static esp_err_t adc_set_i2s_data_len(adc_unit_t adc_unit, int patt_len)
+esp_err_t adc_set_i2s_data_len(adc_unit_t adc_unit, int patt_len)
 {
     ADC_CHECK_UNIT(adc_unit);
     RTC_MODULE_CHECK((patt_len < ADC_PATT_LEN_MAX) && (patt_len > 0), "ADC pattern length error", ESP_ERR_INVALID_ARG);
@@ -1357,7 +1357,7 @@ static esp_err_t adc_set_i2s_data_len(adc_unit_t adc_unit, int patt_len)
     return ESP_OK;
 }
 
-static esp_err_t adc_set_i2s_data_pattern(adc_unit_t adc_unit, int seq_num, adc_channel_t channel, adc_bits_width_t bits, adc_atten_t atten)
+esp_err_t adc_set_i2s_data_pattern(adc_unit_t adc_unit, int seq_num, adc_channel_t channel, adc_bits_width_t bits, adc_atten_t atten)
 {
     ADC_CHECK_UNIT(adc_unit);
     if (adc_unit & ADC_UNIT_1) {
